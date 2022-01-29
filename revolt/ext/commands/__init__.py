@@ -2,5 +2,7 @@ from .checks import *
 from .client import *
 from .command import *
 from .context import *
+from .converters import (BoolConverter, CategoryConverter, ChannelConverter,
+                         IntConverter, MemberConverter, UserConverter)
 from .errors import *
-from .converters import IntConverter, BoolConverter, CategoryConverter, UserConverter, MemberConverter, ChannelConverter
+from .group import *

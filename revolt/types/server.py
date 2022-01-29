@@ -27,7 +27,7 @@ class _ServerOptional(TypedDict, total=False):
     description: str
     categories: list[Category]
     system_messages: SystemMessagesConfig
-    roles: list[Role]
+    roles: dict[str, Role]
     icon: File
     banner: File
     nsfw: bool
@@ -46,11 +46,15 @@ class BannedUser(_OptionalBannedUser):
     _id: str
     username: str
 
+class BanId(TypedDict):
+    server: str
+    user: str
+
 class _OptionalBan(TypedDict, total=False):
     reason: str
 
 class Ban(_OptionalBan):
-    _id: str
+    _id: BanId
 
 class ServerBans(TypedDict):
     users: list[BannedUser]
